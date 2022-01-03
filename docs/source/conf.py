@@ -34,12 +34,17 @@ exclude_patterns = []
 #
 html_theme = 'sphinx_rtd_theme'
 
-latex_engine = 'lualatex'
+latex_engine = 'xelatex'
 latex_use_xindy = False
 latex_elements = {
     'preamble': r'''
-\usepackage{luatexja-fontspec}
-\setmainjfont{Noto Serif CJK TC}
-\setsansjfont{Noto Sans CJK TC}
+\usepackage[AutoFallBack=true]{xeCJK}
+\setCJKmainfont{Noto Serif CJK TC}[Language=Chinese Traditional, BoldFont={* Bold}, ItalicFont=AR PL KaitiM Big5]  % Noto Serif CJK HK is not yet available in the Debian/Ubuntu package repository
+\setCJKsansfont{Noto Sans CJK HK}[Language=Chinese Traditional, BoldFont={* Bold}, ItalicFont=AR PL KaitiM Big5]
+\setCJKmonofont{Noto Sans CJK HK}[Language=Chinese Traditional, BoldFont={* Bold}, ItalicFont=AR PL KaitiM Big5]
+\setCJKfallbackfamilyfont{\CJKrmdefault}[AutoFakeBold]{{HanaMinA},{HanaMinB}}
+\setCJKfallbackfamilyfont{\CJKsfdefault}[AutoFakeBold]{{HanaMinA},{HanaMinB}}
+\setCJKfallbackfamilyfont{\CJKttdefault}[AutoFakeBold]{{HanaMinA},{HanaMinB}}
+\xeCJKEditPunctStyle{quanjiao}{optimize-kerning=true}
 ''',
 }
