@@ -33,3 +33,9 @@ exclude_patterns = []
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
+
+latex_engine = 'xelatex'
+latex_use_xindy = False
+latex_elements = {
+    'preamble': '\\usepackage[UTF8]{ctex}\n',
+}
