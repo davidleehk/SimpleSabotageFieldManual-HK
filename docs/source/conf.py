@@ -34,8 +34,12 @@ exclude_patterns = []
 #
 html_theme = 'sphinx_rtd_theme'
 
-latex_engine = 'xelatex'
+latex_engine = 'lualatex'
 latex_use_xindy = False
 latex_elements = {
-    'preamble': '\\usepackage[UTF8]{ctex}\n',
+    'preamble': r'''
+\usepackage{luatexja-fontspec}
+\setmainjfont{Noto Serif CJK TC}
+\setsansjfont{Noto Sans CJK TC}
+''',
 }
